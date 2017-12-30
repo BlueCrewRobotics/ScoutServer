@@ -28,6 +28,8 @@ In order for your install of the Scout Server to work, we need to make some modi
 
 4) Import Scout.sql. You will need to import the Scout.sql file into phpMyAdmin so it can set up the database and it's tables.
 
+5) Add your team key. A team key is required when using the scout app for simple authentication. Your can create a row in the table `TeamKeys` with an `id` of `1` and a `teamKey` of your key you want to use.
+
 ### Editing
 
 While editing, please follow the guidelines outlined for our team [here](https://github.com/BlueCrewRobotics/Guidelines-and-Resources/wiki "Code Guidelines"). This is one of those situations where you should do as I say, not as I do. The code in this repository is messy and lacking comments.
