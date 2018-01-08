@@ -20,7 +20,7 @@ function db_connect() {
     if(!isset($connection)) {
 		// Load configuration as an array. Use the actual location of your configuration file
 		// Put the configuration file outside of the document root
-		$config = parse_ini_file('scout.ini'); 
+		$config = parse_ini_file('../../../scout.ini'); 
         $connection = mysqli_connect('localhost',$config['username'],$config['password'],$config['dbname']);
     }
     // If connection was not successful, handle the error

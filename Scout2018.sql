@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Dec 28, 2017 at 08:14 PM
+-- Generation Time: Jan 07, 2018 at 05:52 PM
 -- Server version: 5.6.36-cll-lve
 -- PHP Version: 5.6.30
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `Scout`
+-- Database: `Scout2018`
 --
-CREATE DATABASE IF NOT EXISTS `Scout` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `Scout`;
+CREATE DATABASE IF NOT EXISTS `Scout2018` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `Scout2018`;
 
 -- --------------------------------------------------------
 
@@ -46,16 +46,17 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `teamName` varchar(250) DEFAULT NULL,
   `teamNumber` int(11) DEFAULT NULL,
-  `dropGears` varchar(11) DEFAULT NULL,
-  `collectGears` varchar(11) DEFAULT NULL,
-  `climbRope` varchar(11) DEFAULT NULL,
-  `highBoiler` varchar(11) DEFAULT NULL,
-  `lowBoiler` varchar(11) DEFAULT NULL,
-  `collectFuel` varchar(11) DEFAULT NULL,
+  `comments` text,
+  `groundCubes` varchar(11) DEFAULT NULL,
+  `returnCubes` varchar(11) DEFAULT NULL,
+  `stackCubes` varchar(11) DEFAULT NULL,
+  `switch` varchar(11) DEFAULT NULL,
+  `scale` varchar(11) DEFAULT NULL,
+  `climb` varchar(11) DEFAULT NULL,
   `wins` int(11) DEFAULT NULL,
   `losses` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

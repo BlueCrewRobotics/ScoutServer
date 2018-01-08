@@ -1,6 +1,6 @@
 <?php
 
-include_once('database.php');
+include_once('../resources/database/database.php');
 
 $actualKey = "";
 $securityKey = $_POST['securityKey'];
