@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 13, 2018 at 09:31 AM
+-- Generation Time: Jan 13, 2018 at 01:33 PM
 -- Server version: 5.6.36-cll-lve
 -- PHP Version: 5.6.30
 
@@ -60,8 +60,10 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `levitates` int(11) DEFAULT NULL,
   `timeScale` int(11) DEFAULT NULL,
   `timeSwitch` int(11) DEFAULT NULL,
+  `driveTrainType` varchar(30) DEFAULT NULL,
+  `liftOthers` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=132 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=134 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
