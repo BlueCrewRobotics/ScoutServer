@@ -16,6 +16,11 @@ $scale = $_POST["scale"];
 $climb = $_POST["climb"];
 $wins = $_POST["wins"];
 $losses = $_POST["losses"];
+$boosts = $_POST["boosts"];
+$forces = $_POST["forces"];
+$levitates = $_POST["levitates"];
+$timeScale = $_POST["timeScale"];
+$timeSwitch = $_POST["timeSwitch"];
 
 $verArr = [];
 
@@ -34,7 +39,7 @@ if ($securityKey == $actualKey) {
         }
         if (in_array($name, $verArr)) {
             echo "Got Item";
-            $result = db_query("UPDATE Teams SET teamName=\"$name\", teamNumber=\"$number\", comments=\"$comments\" groundCubes=\"$groundCubes\", returnCubes=\"$returnCubes\", stackCubes=\"$stackCubes\", switch=\"$switch\", scale=\"$scale\", climb=\"$climb\", wins=\"$wins\", losses=\"$losses\" WHERE teamName=\"$name\"");
+            $result = db_query("UPDATE Teams SET teamName=\"$name\", teamNumber=\"$number\", comments=\"$comments\" groundCubes=\"$groundCubes\", returnCubes=\"$returnCubes\", stackCubes=\"$stackCubes\", switch=\"$switch\", scale=\"$scale\", climb=\"$climb\", wins=\"$wins\", losses=\"$losses\", boosts=\"$boosts\", forces=\"$forces\", levitates=\"$levitates\", timeScale=\"$timeScale\", timeSwitch=\"$timeSwitch\" WHERE teamName=\"$name\"");
             if($result === false) {
                 echo "Failure";
             } else {
@@ -49,7 +54,7 @@ if ($securityKey == $actualKey) {
                 }
             }
         } else {
-            $result = db_query("INSERT INTO Teams (teamName, teamNumber, comments, groundCubes, returnCubes, stackCubes, switch, scale, climb, wins, losses) VALUES (\"$name\",\"$number\",\"$comments\",\"$groundCubes\",\"$returnCubes\",\"$stackCubes\",\"$switch\",\"$scale\",\"$climb\", \"$wins\", \"$losses\")");
+            $result = db_query("INSERT INTO Teams (teamName, teamNumber, comments, groundCubes, returnCubes, stackCubes, switch, scale, climb, wins, losses, boosts, forces, levitates, timeScale, timeSwitch) VALUES (\"$name\",\"$number\",\"$comments\",\"$groundCubes\",\"$returnCubes\",\"$stackCubes\",\"$switch\",\"$scale\",\"$climb\", \"$wins\", \"$losses\", \"$boosts\", \"$forces\", \"$levitates\", \"$timeScale\", \"$timeSwitch\")");
             if($result === false) {
                 echo "Failure";
             } else {

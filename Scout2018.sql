@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jan 07, 2018 at 05:52 PM
+-- Generation Time: Jan 13, 2018 at 09:31 AM
 -- Server version: 5.6.36-cll-lve
 -- PHP Version: 5.6.30
 
@@ -55,8 +55,13 @@ CREATE TABLE IF NOT EXISTS `Teams` (
   `climb` varchar(11) DEFAULT NULL,
   `wins` int(11) DEFAULT NULL,
   `losses` int(11) DEFAULT NULL,
+  `forces` int(11) DEFAULT NULL,
+  `boosts` int(11) DEFAULT NULL,
+  `levitates` int(11) DEFAULT NULL,
+  `timeScale` int(11) DEFAULT NULL,
+  `timeSwitch` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=127 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=132 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
