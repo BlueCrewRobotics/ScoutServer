@@ -21,6 +21,8 @@ $forces = $_POST["forces"];
 $levitates = $_POST["levitates"];
 $timeScale = $_POST["timeScale"];
 $timeSwitch = $_POST["timeSwitch"];
+$driveTrainType = $_POST["driveTrainType"];
+$liftOthers = $_POST["liftOthers"];
 
 $verArr = [];
 
@@ -39,9 +41,11 @@ if ($securityKey == $actualKey) {
         }
         if (in_array($name, $verArr)) {
             echo "Got Item";
-            $result = db_query("UPDATE Teams SET teamName=\"$name\", teamNumber=\"$number\", comments=\"$comments\" groundCubes=\"$groundCubes\", returnCubes=\"$returnCubes\", stackCubes=\"$stackCubes\", switch=\"$switch\", scale=\"$scale\", climb=\"$climb\", wins=\"$wins\", losses=\"$losses\", boosts=\"$boosts\", forces=\"$forces\", levitates=\"$levitates\", timeScale=\"$timeScale\", timeSwitch=\"$timeSwitch\" WHERE teamName=\"$name\"");
+                        
+            $result = db_query("UPDATE Teams SET teamName=\"$name\", teamNumber=\"$number\", comments=\"$comments\", groundCubes=\"$groundCubes\", returnCubes=\"$returnCubes\", stackCubes=\"$stackCubes\", switch=\"$switch\", scale=\"$scale\", climb=\"$climb\", wins=\"$wins\", losses=\"$losses\", boosts=\"$boosts\", forces=\"$forces\", levitates=\"$levitates\", timeScale=\"$timeScale\", timeSwitch=\"$timeSwitch\", driveTrainType=\"$driveTrainType\", liftOthers=\"$liftOthers\" WHERE teamName=\"$name\"");
             if($result === false) {
                 echo "Failure";
+                error_log(db_error(), 0);
             } else {
                 echo "Success";
                 $query = db_select("SELECT * FROM Teams");
@@ -54,7 +58,7 @@ if ($securityKey == $actualKey) {
                 }
             }
         } else {
-            $result = db_query("INSERT INTO Teams (teamName, teamNumber, comments, groundCubes, returnCubes, stackCubes, switch, scale, climb, wins, losses, boosts, forces, levitates, timeScale, timeSwitch) VALUES (\"$name\",\"$number\",\"$comments\",\"$groundCubes\",\"$returnCubes\",\"$stackCubes\",\"$switch\",\"$scale\",\"$climb\", \"$wins\", \"$losses\", \"$boosts\", \"$forces\", \"$levitates\", \"$timeScale\", \"$timeSwitch\")");
+            $result = db_query("INSERT INTO Teams (teamName, teamNumber, comments, groundCubes, returnCubes, stackCubes, switch, scale, climb, wins, losses, boosts, forces, levitates, timeScale, timeSwitch, driveTrainType, liftOthers) VALUES (\"$name\",\"$number\",\"$comments\",\"$groundCubes\",\"$returnCubes\",\"$stackCubes\",\"$switch\",\"$scale\",\"$climb\", \"$wins\", \"$losses\", \"$boosts\", \"$forces\", \"$levitates\", \"$timeScale\", \"$timeSwitch\", \"$driveTrainType\", \"$liftOthers\")");
             if($result === false) {
                 echo "Failure";
             } else {
